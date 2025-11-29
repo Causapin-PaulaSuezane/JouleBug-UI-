@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_home"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Red Header Section -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/headerSection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_background_red"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- User Profile Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvUserProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="60dp"
+                app:cardBackgroundColor="@color/pixel_white"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:background="@drawable/border_black_thick">
+
+                    <!-- User Avatar Placeholder -->
+                    <ImageView
+                        android:id="@+id/ivUserAvatar"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/avatar_placeholder"
+                        android:background="@color/bg_cream"/>
+
+                    <!-- User Info -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvGreeting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"/>
+
+                        <!-- XP Progress -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="4dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="LV 8"
+                                android:textSize="8sp"
+                                android:textColor="@color/pixel_black"
+                                android:fontFamily="monospace"
+                                android:textStyle="bold"
+                                android:background="@color/pixel_yellow"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:paddingTop="2dp"
+                                android:paddingBottom="2dp"/>
+
+                            <ProgressBar
+                                android:id="@+id/pbXP"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="12dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:progressDrawable="@drawable/progress_bar_xp"
+                                android:max="100"
+                                android:progress="81"/>
+
+                            <TextView
+                                android:id="@+id/tvXP"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5999"
+                                android:textSize="8sp"
+                                android:textColor="@color/pixel_black"
+                                android:fontFamily="monospace"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+
+                        <!-- Streak -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="4dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="STREAK"
+                                android:textSize="8sp"
+                                android:textColor="@color/text_secondary"
+                                android:fontFamily="monospace"/>
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:src="@drawable/ic_fire"
+                                android:layout_marginStart="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="01"
+                                android:textSize="8sp"
+                                android:textColor="@color/pixel_black"
+                                android:fontFamily="monospace"
+                                android:textStyle="bold"
+                                android:layout_marginStart="2dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="02"
+                                android:textSize="8sp"
+                                android:textColor="@color/text_secondary"
+                                android:fontFamily="monospace"
+                                android:layout_marginStart="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="03"
+                                android:textSize="8sp"
+                                android:textColor="@color/text_secondary"
+                                android:fontFamily="monospace"
+                                android:layout_marginStart="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="04"
+                                android:textSize="8sp"
+                                android:textColor="@color/text_secondary"
+                                android:fontFamily="monospace"
+                                android:layout_marginStart="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="05"
+                                android:textSize="8sp"
+                                android:textColor="@color/text_secondary"
+                                android:fontFamily="monospace"
+                                android:layout_marginStart="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="06"
+                                android:textSize="8sp"
+                                android:textColor="@color/text_secondary"
+                                android:fontFamily="monospace"
+                                android:layout_marginStart="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="07"
+                                android:textSize="8sp"
+                                android:textColor="@color/text_secondary"
+                                android:fontFamily="monospace"
+                                android:layout_marginStart="4dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Hamburger Menu -->
+            <ImageButton
+                android:id="@+id/btnMenu"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_menu"
+                android:background="@drawable/button_red_pixel"
+                android:contentDescription="Menu"
+                android:scaleType="centerInside"
+                android:padding="12dp"
+                app:layout_constraintTop_toTopOf="@id/cvUserProfile"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Stats Cards -->
+            <LinearLayout
+                android:id="@+id/statsLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/cvUserProfile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!-- Tasks Completed -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    app:cardBackgroundColor="@color/pixel_yellow"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:gravity="center"
+                        android:background="@drawable/border_black_medium">
+
+                        <TextView
+                            android:id="@+id/tvTasksCompleted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="153"
+                            android:textSize="20sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TASK COMPLETED"
+                            android:textSize="7sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="monospace"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Badges Climbed -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    app:cardBackgroundColor="#64B5F6"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:gravity="center"
+                        android:background="@drawable/border_black_medium">
+
+                        <TextView
+                            android:id="@+id/tvBadgesClimbed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="21"
+                            android:textSize="20sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="BADGES CLIMBED"
+                            android:textSize="7sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="monospace"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Rank -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#AED581"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:gravity="center"
+                        android:background="@drawable/border_black_medium">
+
+                        <TextView
+                            android:id="@+id/tvRank"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="#118"
+                            android:textSize="20sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RANK"
+                            android:textSize="7sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="monospace"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Daily Tasks Section -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvDailyTasks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="@color/pixel_white"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="8dp"
+            app:layout_constraintTop_toBottomOf="@id/headerSection"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/border_black_thick">
+
+                <!-- Daily Tasks Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/pixel_red"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="DAILY TASKS"
+                        android:textSize="14sp"
+                        android:textColor="@color/pixel_white"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvDailyProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/10"
+                        android:textSize="12sp"
+                        android:textColor="@color/pixel_white"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <!-- Task Items Container -->
+                <LinearLayout
+                    android:id="@+id/llDailyTasksContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@color/pixel_yellow">
+
+                    <!-- Sample Task Item 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <CheckBox
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:buttonTint="@color/pixel_black"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="SOMETHING TASK"
+                            android:textSize="10sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"
+                            android:layout_gravity="center_vertical"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+50 XP"
+                            android:textSize="10sp"
+                            android:textColor="@color/pixel_green"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"/>
+                    </LinearLayout>
+
+                    <!-- Sample Task Item 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <CheckBox
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:buttonTint="@color/pixel_black"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="SOMETHING TASK"
+                            android:textSize="10sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"
+                            android:layout_gravity="center_vertical"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+50 PTS"
+                            android:textSize="10sp"
+                            android:textColor="@color/pixel_green"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"/>
+                    </LinearLayout>
+
+                    <!-- Sample Task Item 3 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <CheckBox
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:buttonTint="@color/pixel_black"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="SOMETHING TASK"
+                            android:textSize="10sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"
+                            android:layout_gravity="center_vertical"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+50 XP"
+                            android:textSize="10sp"
+                            android:textColor="@color/pixel_green"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Weekly Tasks Section -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvWeeklyTasks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/pixel_white"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="8dp"
+            app:layout_constraintTop_toBottomOf="@id/cvDailyTasks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/border_black_thick">
+
+                <!-- Weekly Tasks Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/pixel_green"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="WEEKLY TASKS"
+                        android:textSize="14sp"
+                        android:textColor="@color/pixel_white"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvWeeklyProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/10"
+                        android:textSize="12sp"
+                        android:textColor="@color/pixel_white"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Ladybug Action Button -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvActionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/pixel_red"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="12dp"
+            app:layout_constraintTop_toBottomOf="@id/cvWeeklyTasks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ladybug_pixel" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="START TAKING\nACTION!"
+                    android:textColor="@color/pixel_white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

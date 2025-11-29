@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "393794542136",
+    "project_id": "joulebug-a844b",
+    "storage_bucket": "joulebug-a844b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393794542136:android:23d1c5607d03d6df2de4cd",
+        "android_client_info": {
+          "package_name": "com.example.mobcom"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYrPsKPMWx_GxXC3eAqCsk8IX5ijDIpXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
