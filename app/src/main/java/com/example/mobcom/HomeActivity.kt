@@ -58,14 +58,19 @@ class HomeActivity : AppCompatActivity() {
             showMenu()
         }
 
-        // Action button
-        binding.cvActionButton.setOnClickListener {
-            Toast.makeText(this, "Start taking action! 🐞⚡", Toast.LENGTH_SHORT).show()
+        // Camera Action button
+        binding.cvCameraButton.setOnClickListener {
+            openCamera()
         }
 
-        // DROPDOWN TOGGLE (Daily Tasks)
+        // Daily Tasks dropdown
         binding.headerDailyTasks.setOnClickListener {
             toggleDropdown(binding.llDailyTasksContainer, binding.ivDropdownArrow)
+        }
+
+        // Weekly Tasks dropdown
+        binding.headerWeeklyTasks.setOnClickListener {
+            toggleDropdown(binding.llWeeklyTasksContainer, binding.ivWeeklyDropdownArrow)
         }
     }
 
@@ -252,6 +257,11 @@ class HomeActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
             .show()
+    }
+
+    private fun openCamera() {
+        Toast.makeText(this, "📸 Opening camera to capture eco-actions!", Toast.LENGTH_SHORT).show()
+        // TODO: Add camera functionality later
     }
 
     private fun confirmLogout() {

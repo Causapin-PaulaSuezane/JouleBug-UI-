@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background_home"
-    android:fillViewport="true">
+    android:background="@drawable/gradient_background_home">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <!-- Main Content ScrollView -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomActionSection"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
 
         <!-- Red Header Section -->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,7 +75,7 @@
                             android:id="@+id/tvGreeting"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="14sp"
+                            android:textSize="20sp"
                             android:textColor="@color/pixel_black"
                             android:fontFamily="@font/pixelzone_0v6y4"
                             android:textStyle="bold"/>
@@ -380,7 +390,7 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="DAILY TASKS"
-                        android:textSize="25sp"
+                        android:textSize="35sp"
                         android:textColor="@color/pixel_white"
                         android:fontFamily="@font/pixelzone_0v6y4"
                         android:textStyle="bold"/>
@@ -526,7 +536,7 @@
 
         <!-- Weekly Tasks Section -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/cvWeeklyTasks"
+            android:id="@+id/headerWeeklyTasks"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -558,7 +568,7 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="WEEKLY TASKS"
-                        android:textSize="14sp"
+                        android:textSize="35sp"
                         android:textColor="@color/pixel_white"
                         android:fontFamily="@font/pixelzone_0v6y4"
                         android:textStyle="bold"/>
@@ -572,51 +582,167 @@
                         android:textColor="@color/pixel_white"
                         android:fontFamily="@font/snowbell_wp4g9"
                         android:textStyle="bold"/>
+
+                    <ImageView
+                        android:id="@+id/ivWeeklyDropdownArrow"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_arrow_down"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+
+                <!-- Weekly Task Items Container (Initially hidden) -->
+                <LinearLayout
+                    android:id="@+id/llWeeklyTasksContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@color/pixel_yellow"
+                    android:visibility="gone">
+
+                    <!-- Sample Weekly Task Item 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <CheckBox
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:buttonTint="@color/pixel_black"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="WEEKLY TASK 1"
+                            android:textSize="10sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="@font/snowbell_wp4g9"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"
+                            android:layout_gravity="center_vertical"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+100 XP"
+                            android:textSize="10sp"
+                            android:textColor="@color/pixel_green"
+                            android:fontFamily="@font/snowbell_wp4g9"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"/>
+                    </LinearLayout>
+
+                    <!-- Sample Weekly Task Item 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <CheckBox
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:buttonTint="@color/pixel_black"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="WEEKLY TASK 2"
+                            android:textSize="10sp"
+                            android:textColor="@color/pixel_black"
+                            android:fontFamily="@font/snowbell_wp4g9"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"
+                            android:layout_gravity="center_vertical"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+120 XP"
+                            android:textSize="10sp"
+                            android:textColor="@color/pixel_green"
+                            android:fontFamily="@font/snowbell_wp4g9"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"/>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
-        <!-- Ladybug Action Button -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvActionButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="24dp"
-            app:cardBackgroundColor="@color/pixel_red"
-            app:cardCornerRadius="100dp"
-            app:cardElevation="12dp"
-            app:layout_constraintTop_toBottomOf="@id/cvWeeklyTasks"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ladybug_pixel" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/snowbell_wp4g9"
-                    android:gravity="center"
-                    android:text="START TAKING\nACTION!"
-                    android:textColor="@color/pixel_white"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+
+    <!-- Ladybug Bottom Action Button -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomActionSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ladybug_bottom_background"
+        android:paddingTop="5dp"
+        android:paddingBottom="32dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Camera Icon Button -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvCameraButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:cardBackgroundColor="@color/pixel_white"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvStartTaking">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_camera"
+                android:tint="@color/pixel_black"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- START TAKING Text (smaller) -->
+        <TextView
+            android:id="@+id/tvStartTaking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="START TAKING"
+            android:textColor="@color/pixel_white"
+            android:textSize="10sp"
+            android:fontFamily="@font/snowbell_wp4g9"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            app:layout_constraintTop_toBottomOf="@id/cvCameraButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- ACTION! Text (bigger) -->
+        <TextView
+            android:id="@+id/tvAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTION!"
+            android:textColor="@color/pixel_white"
+            android:textSize="18sp"
+            android:fontFamily="@font/snowbell_wp4g9"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            app:layout_constraintTop_toBottomOf="@id/tvStartTaking"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

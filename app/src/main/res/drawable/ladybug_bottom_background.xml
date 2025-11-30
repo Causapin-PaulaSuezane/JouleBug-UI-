@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Red curved background -->
+    <item>
+        <shape android:shape="rectangle"/>
+    </item>
+    <item
+        android:bottom="-100dp"
+        android:left="-100dp"
+        android:right="-100dp"
+        android:top="0dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/pixel_red" />
+        </shape>
+    </item>
+
+    <!-- Black dots (ladybug spots) -->
+    <!-- right top dot -->
+    <item
+        android:left="300dp"
+        android:top="30dp"
+        android:width="60dp"
+        android:height="60dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/pixel_black"/>
+        </shape>
+    </item>
+
+    <!-- left most top dot -->
+    <item
+        android:right="0dp"
+        android:top="45dp"
+        android:width="50dp"
+        android:height="50dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/pixel_black"/>
+        </shape>
+    </item>
+
+    <!-- mid right dot -->
+    <item
+        android:left="270dp"
+        android:top="110dp"
+        android:width="45dp"
+        android:height="45dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/pixel_black"/>
+        </shape>
+    </item>
+
+    <!-- Bottom left dot -->
+    <item
+        android:right="80dp"
+        android:top="150dp"
+        android:width="91dp"
+        android:height="91dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/pixel_black"/>
+        </shape>
+    </item>
+
+    <!-- big right dot mid  -->
+    <item
+        android:left="370dp"
+        android:top="90dp"
+        android:width="75dp"
+        android:height="75dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/pixel_black"/>
+        </shape>
+    </item>
+
+    <!-- big left dot mid  -->
+    <item
+        android:left="100dp"
+        android:top="90dp"
+        android:width="65dp"
+        android:height="65dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/pixel_black"/>
+        </shape>
+    </item>
+
+    <!-- mid bottom  -->
+    <item
+        android:left="175dp"
+        android:top="165dp"
+        android:width="100dp"
+        android:height="100dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/pixel_black"/>
+        </shape>
+    </item>
+
+    <!-- left mid top  -->
+    <item
+        android:left="130dp"
+        android:top="10dp"
+        android:width="35dp"
+        android:height="30dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/pixel_black"/>
+        </shape>
+    </item>
+
+
+</layer-list>
