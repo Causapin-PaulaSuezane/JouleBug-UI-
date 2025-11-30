@@ -11,6 +11,11 @@ import androidx.core.view.GravityCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.example.mobcom.databinding.ActivityHomeBinding
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.RotateAnimation
+import android.view.animation.Transformation
+import android.view.ViewGroup.LayoutParams
 
 class HomeActivity : AppCompatActivity() {
 
@@ -43,6 +48,8 @@ class HomeActivity : AppCompatActivity() {
 
         // Setup click listeners
         setupClickListeners()
+
+
     }
 
     private fun setupClickListeners() {
@@ -54,7 +61,11 @@ class HomeActivity : AppCompatActivity() {
         // Action button
         binding.cvActionButton.setOnClickListener {
             Toast.makeText(this, "Start taking action! 🐞⚡", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to tasks/actions screen
+        }
+
+        // DROPDOWN TOGGLE (Daily Tasks)
+        binding.headerDailyTasks.setOnClickListener {
+            toggleDropdown(binding.llDailyTasksContainer, binding.ivDropdownArrow)
         }
     }
 
@@ -107,9 +118,8 @@ class HomeActivity : AppCompatActivity() {
         binding.tvXP.text = xp.toString()
 
         // Calculate XP percentage (assuming 1000 XP per level)
-        val xpForNextLevel = level * 1000
-        val xpProgress = ((xp.toFloat() / xpForNextLevel) * 100).toInt()
-        binding.pbXP.progress = xpProgress
+        binding.pbXP.max = 100
+        binding.pbXP.progress = xp.coerceIn(0, 100)
 
         // Update stats
         binding.tvTasksCompleted.text = tasksCompleted.toString()
@@ -158,6 +168,74 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
             .show()
+    }
+
+    private fun toggleDropdown(container: View, arrow: View) {
+        if (container.visibility == View.VISIBLE) {
+            // Collapse
+            collapse(container)
+            rotateArrow(arrow, 180f, 0f)
+        } else {
+            // Expand
+            expand(container)
+            rotateArrow(arrow, 0f, 180f)
+        }
+    }
+
+    private fun expand(v: View) {
+        v.measure(
+            View.MeasureSpec.makeMeasureSpec((v.parent as View).width, View.MeasureSpec.EXACTLY),
+            View.MeasureSpec.UNSPECIFIED
+        )
+        val targetHeight = v.measuredHeight
+
+        v.layoutParams.height = 0
+        v.visibility = View.VISIBLE
+
+        val a: Animation = object : Animation() {
+            override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
+                v.layoutParams.height =
+                    if (interpolatedTime == 1f) LayoutParams.WRAP_CONTENT
+                    else (targetHeight * interpolatedTime).toInt()
+                v.requestLayout()
+            }
+
+            override fun willChangeBounds(): Boolean = true
+        }
+
+        a.duration = (targetHeight / v.context.resources.displayMetrics.density).toLong()
+        v.startAnimation(a)
+    }
+
+    private fun collapse(v: View) {
+        val initialHeight = v.measuredHeight
+
+        val a: Animation = object : Animation() {
+            override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
+                if (interpolatedTime == 1f) {
+                    v.visibility = View.GONE
+                } else {
+                    v.layoutParams.height = initialHeight - (initialHeight * interpolatedTime).toInt()
+                    v.requestLayout()
+                }
+            }
+
+            override fun willChangeBounds(): Boolean = true
+        }
+
+        a.duration = (initialHeight / v.context.resources.displayMetrics.density).toLong()
+        v.startAnimation(a)
+    }
+
+    private fun rotateArrow(arrow: View, from: Float, to: Float) {
+        val rotate = RotateAnimation(
+            from, to,
+            Animation.RELATIVE_TO_SELF, 0.5f,
+            Animation.RELATIVE_TO_SELF, 0.5f
+        )
+        rotate.duration = 300
+        rotate.fillAfter = true
+        arrow.startAnimation(rotate)
     }
 
     private fun showSDGInfo() {

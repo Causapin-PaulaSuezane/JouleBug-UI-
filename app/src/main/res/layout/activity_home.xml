@@ -107,7 +107,6 @@
                                 android:id="@+id/tvXP"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="5999"
                                 android:textSize="8sp"
                                 android:textColor="@color/pixel_black"
                                 android:fontFamily="@font/snowbell_wp4g9"
@@ -211,10 +210,13 @@
                 android:src="@drawable/ic_menu"
                 android:background="@drawable/button_red_pixel"
                 android:contentDescription="Menu"
-                android:scaleType="centerInside"
-                android:padding="12dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="10dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="12dp"
                 app:layout_constraintTop_toTopOf="@id/cvUserProfile"
                 app:layout_constraintEnd_toEndOf="parent"/>
+
 
             <!-- Stats Cards -->
             <LinearLayout
@@ -366,6 +368,7 @@
 
                 <!-- Daily Tasks Header -->
                 <LinearLayout
+                    android:id="@+id/headerDailyTasks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -377,7 +380,7 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="DAILY TASKS"
-                        android:textSize="14sp"
+                        android:textSize="25sp"
                         android:textColor="@color/pixel_white"
                         android:fontFamily="@font/pixelzone_0v6y4"
                         android:textStyle="bold"/>
@@ -391,6 +394,13 @@
                         android:textColor="@color/pixel_white"
                         android:fontFamily="@font/snowbell_wp4g9"
                         android:textStyle="bold"/>
+
+                    <ImageView
+                        android:id="@+id/ivDropdownArrow"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_arrow_down"
+                        android:layout_gravity="center_vertical"/>
                 </LinearLayout>
 
                 <!-- Task Items Container -->
@@ -400,7 +410,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp"
-                    android:background="@color/pixel_yellow">
+                    android:background="@color/pixel_yellow"
+                    android:visibility="gone">
 
                     <!-- Sample Task Item 1 -->
                     <LinearLayout

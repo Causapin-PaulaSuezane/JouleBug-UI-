@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#EF4444"/>
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Red background -->
+    <item>
+        <shape>
+            <solid android:color="#EF4444"/>
+        </shape>
+    </item>
+
+    <!-- Black bottom line -->
+    <item
+        android:gravity="bottom">
+        <shape>
+            <solid android:color="#000000"/>
+            <size android:height="10dp"/> <!-- thickness of the line -->
+        </shape>
+    </item>
+
+</layer-list>
