@@ -167,10 +167,9 @@ class RegisterActivity : AppCompatActivity() {
                 // Success!
                 binding.btnSignUp.isEnabled = true
                 binding.btnSignUp.text = "SIGN UP"
-                Toast.makeText(this, "Account created! Welcome! ⚡", Toast.LENGTH_SHORT).show()
 
-                // Navigate to Home
-                navigateToHome()
+                // Navigate back to Login
+                navigateToLogin()
             }
             .addOnFailureListener { e ->
                 // Failed to save data
@@ -184,8 +183,8 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 
-    private fun navigateToHome() {
-        startActivity(Intent(this, HomeActivity::class.java))
-        finish()
+    private fun navigateToLogin() {
+        Toast.makeText(this, "Account created! Please login ⚡", Toast.LENGTH_SHORT).show()
+        finish() // Goes back to LoginActivity
     }
 }
