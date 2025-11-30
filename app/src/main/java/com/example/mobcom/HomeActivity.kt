@@ -2,12 +2,9 @@ package com.example.mobcom
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.example.mobcom.databinding.ActivityHomeBinding
@@ -260,8 +257,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun openCamera() {
-        Toast.makeText(this, "📸 Opening camera to capture eco-actions!", Toast.LENGTH_SHORT).show()
-        // TODO: Add camera functionality later
+        Toast.makeText(this, "📸 Opening camera to capture eco-actions! (Coming Soon)", Toast.LENGTH_SHORT).show()
+
     }
 
     private fun confirmLogout() {
