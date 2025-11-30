@@ -20,6 +20,21 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val fullText = "ALREADY HAVE AN ACCOUNT? LOG IN"
+        val spannable = android.text.SpannableString(fullText)
+
+        val start = fullText.indexOf("LOG IN")
+        val end = start + "LOG IN".length
+
+        spannable.setSpan(
+            android.text.style.UnderlineSpan(),
+            start,
+            end,
+            android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        binding.tvLogin.text = spannable
+
         // Initialize Firebase
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()

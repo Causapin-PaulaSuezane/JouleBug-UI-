@@ -58,7 +58,8 @@
             android:text="SOMETHING SOMETHING SLOGAN!"
             android:textSize="10sp"
             android:textColor="@color/text_secondary"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/worksans_regular"
+            android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/tvAppTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -82,7 +83,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/worksans_regular"
+                android:textStyle="normal"
                 android:textSize="12sp"
                 android:padding="16dp"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -108,7 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/worksans_regular"
                 android:textSize="12sp"
                 android:padding="16dp"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -123,7 +125,7 @@
             android:text="LOG IN"
             android:textSize="16sp"
             android:backgroundTint="@color/pixel_red"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/worksans_regular"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/tilPassword"
             app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +140,7 @@
             android:text="NEW PLAYER? JOIN NOW!"
             android:textSize="10sp"
             android:textColor="@color/pixel_red"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/worksans_regular"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/btnLogin"
             app:layout_constraintStart_toStartOf="parent"

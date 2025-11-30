@@ -23,5 +23,8 @@
         <item name="boxCornerRadiusBottomEnd">0dp</item>
         <item name="boxStrokeWidth">4dp</item>
         <item name="boxStrokeColor">@color/pixel_black</item>
+
+        <item name="hintTextColor">#757575</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

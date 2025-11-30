@@ -17,6 +17,21 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val text = "NEW PLAYER? JOIN NOW!"
+        val spannable = android.text.SpannableString(text)
+
+        val start = text.indexOf("JOIN NOW")
+        val end = start + "JOIN NOW".length
+
+        spannable.setSpan(
+            android.text.style.UnderlineSpan(),
+            start,
+            end,
+            android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        binding.tvSignUp.text = spannable
+
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
