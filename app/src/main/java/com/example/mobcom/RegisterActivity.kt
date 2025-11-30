@@ -24,8 +24,21 @@ class RegisterActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
+        animateLogo()
+
         setupClickListeners()
     }
+
+    private fun animateLogo() {
+        // Animate the logo
+        val logoAnimation = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.bounce_animation)
+        binding.ivLogo.startAnimation(logoAnimation)
+
+        // Animate the glow effect
+        val glowAnimation = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.pulse_animation)
+        binding.glowEffect.startAnimation(glowAnimation)
+    }
+
 
     private fun setupClickListeners() {
         binding.btnSignUp.setOnClickListener {

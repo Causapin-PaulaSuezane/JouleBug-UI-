@@ -11,6 +11,16 @@
         android:layout_height="wrap_content"
         android:padding="24dp">
 
+        <View
+            android:id="@+id/glowEffect"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:background="@drawable/glow_circle"
+            app:layout_constraintTop_toTopOf="@id/ivLogo"
+            app:layout_constraintBottom_toBottomOf="@id/ivLogo"
+            app:layout_constraintStart_toStartOf="@id/ivLogo"
+            app:layout_constraintEnd_toEndOf="@id/ivLogo"/>
+
         <!-- Ladybug Logo -->
         <ImageView
             android:id="@+id/ivLogo"
@@ -32,7 +42,7 @@
             android:text="CREATE ACCOUNT"
             android:textSize="24sp"
             android:textColor="@color/pixel_red"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/pixelzone_0v6y4"
             android:textStyle="bold"
             android:letterSpacing="0.1"
             app:layout_constraintTop_toBottomOf="@id/ivLogo"
