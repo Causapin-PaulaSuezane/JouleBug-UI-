@@ -13,6 +13,7 @@ import android.view.animation.Animation
 import android.view.animation.RotateAnimation
 import android.view.animation.Transformation
 import android.view.ViewGroup.LayoutParams
+import androidx.core.view.isVisible
 
 class HomeActivity : AppCompatActivity() {
 
@@ -56,8 +57,22 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // Camera Action button
+        var isExpanded = false
         binding.cvCameraButton.setOnClickListener {
-            openCamera()
+            if (!isExpanded) {
+                // Expand (slide up)
+                expandBottomSection()
+                isExpanded = true
+            } else {
+                // Collapse (slide down)
+                collapseBottomSection()
+                isExpanded = false
+            }
+        }
+
+        // Mission section collapse/expand
+        binding.headerMission.setOnClickListener {
+            toggleDropdown(binding.llMissionContent, binding.ivMissionDropdownArrow)
         }
 
         // Daily Tasks dropdown
@@ -173,7 +188,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun toggleDropdown(container: View, arrow: View) {
-        if (container.visibility == View.VISIBLE) {
+        if (container.isVisible) {
             // Collapse
             collapse(container)
             rotateArrow(arrow, 180f, 0f)
@@ -259,6 +274,32 @@ class HomeActivity : AppCompatActivity() {
     private fun openCamera() {
         Toast.makeText(this, "📸 Opening camera to capture eco-actions! (Coming Soon)", Toast.LENGTH_SHORT).show()
 
+    }
+
+    private fun expandBottomSection() {
+        binding.bottomActionSection.animate()
+            .translationY(0f)  // Slide to original position (fully visible)
+            .setDuration(300)
+            .start()
+
+        // Optional: Rotate camera button
+        binding.cvCameraButton.animate()
+            .rotation(360f)
+            .setDuration(300)
+            .start()
+    }
+
+    private fun collapseBottomSection() {
+        binding.bottomActionSection.animate()
+            .translationY(250f)  // Slide back down (partially hidden)
+            .setDuration(300)
+            .start()
+
+        // Optional: Reset rotation
+        binding.cvCameraButton.animate()
+            .rotation(0f)
+            .setDuration(300)
+            .start()
     }
 
     private fun confirmLogout() {

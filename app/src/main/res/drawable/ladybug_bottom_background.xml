@@ -9,7 +9,9 @@
         android:bottom="-100dp"
         android:left="-100dp"
         android:right="-100dp"
-        android:top="0dp">
+        android:top="0dp"
+        android:paddingBottom="180dp"
+        >
         <shape android:shape="oval">
             <solid android:color="@color/pixel_red" />
         </shape>

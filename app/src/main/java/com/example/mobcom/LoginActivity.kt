@@ -1,5 +1,6 @@
 package com.example.mobcom
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -65,6 +66,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun loginUser() {
         val email = binding.etEmail.text.toString().trim()
         val password = binding.etPassword.text.toString().trim()
@@ -84,7 +86,7 @@ class LoginActivity : AppCompatActivity() {
         binding.tilEmail.error = null
         binding.tilPassword.error = null
 
-        // Show loading (you can add a progress bar)
+        // Show loading
         binding.btnLogin.isEnabled = false
         binding.btnLogin.text = "LOGGING IN..."
 

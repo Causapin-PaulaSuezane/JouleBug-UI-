@@ -71,4 +71,17 @@
     <!-- SDG Dialog -->
     <string name="dialog_sdg_title">OUR MISSION 🌍</string>
     <string name="dialog_sdg_message">SDG 11: Sustainable Cities and Communities\nMaking cities inclusive, safe, resilient and sustainable.\n\nSDG 13: Climate Action\nTaking urgent action to combat climate change and its impacts.\n\nTogether, we\'re building a better future through daily eco-actions!</string>
+
+    <!-- App Info -->
+    <string name="app_title_full">JouleBug: Level Up Your Planet</string>
+    <string name="sdg_mission1">OUR MISSION</string>
+    <string name="sdg_description">Together, we\'re building sustainable cities and fighting climate change through daily eco-actions. Every small action counts towards a greener future!</string>
+
+    <!-- SDG Labels -->
+    <string name="sdg_11_title">SDG 11</string>
+    <string name="sdg_11_subtitle">Sustainable Cities</string>
+    <string name="sdg_13_title">SDG 13</string>
+    <string name="sdg_13_subtitle">Climate Action</string>
+    <string name="joulebug">JOULEBUG</string>
+    <string name="lv_8">LV 8</string>
 </resources>
