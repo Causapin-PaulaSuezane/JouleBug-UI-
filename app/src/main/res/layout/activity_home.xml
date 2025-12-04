@@ -18,10 +18,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:fillViewport="true"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/bottomActionSection"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -344,63 +344,159 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:background="@drawable/border_black_thick">
+                        android:background="@drawable/border_black_thick"
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:id="@+id/headerMission"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:background="@drawable/sdg_background"
-                            android:padding="12dp"
+                            android:background="@color/pixel_white"
                             android:clickable="true"
-                            android:focusable="true">
+                            android:focusable="true"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
 
                             <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@drawable/ic_target"
-                                app:tint="@color/pixel_green"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginEnd="8dp"
-                                android:layout_gravity="center_vertical"/>
+                                android:src="@drawable/ic_target"
+                                app:tint="@color/pixel_green" />
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:text="OUR MISSION"
-                                android:textSize="28sp"
-                                android:textColor="@color/pixel_green"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
                                 android:fontFamily="@font/pixelzone_0v6y4"
-                                android:textStyle="bold"
-                                android:layout_gravity="center_vertical"/>
+                                android:text="OUR MISSION"
+                                android:textColor="@color/pixel_green"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
 
                             <ImageView
                                 android:id="@+id/ivMissionDropdownArrow"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
+                                android:layout_gravity="center_vertical"
                                 android:src="@drawable/ic_arrow_down"
-                                app:tint="@color/pixel_green"
-                                android:layout_gravity="center_vertical"/>
+                                app:tint="@color/pixel_green" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/llMissionContent"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@color/bg_light_green"
                             android:orientation="vertical"
                             android:padding="16dp"
-                            android:background="@color/bg_light_green"
                             android:visibility="gone">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Together, we're building sustainable cities!"
-                                android:textSize="11sp"
+                                android:fontFamily="@font/worksans_regular"
+                                android:text="Together, we're building sustainable cities and fighting climate change through daily eco-actions. Every small action counts towards a greener future!"
                                 android:textColor="@color/pixel_black"
-                                android:fontFamily="@font/worksans_regular"/>
+                                android:textSize="12sp"
+                                android:layout_marginBottom="16dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="8dp"
+                                    app:cardBackgroundColor="#64B5F6"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardElevation="4dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:background="@drawable/border_black_medium">
+
+                                        <ImageView
+                                            android:layout_width="64dp"
+                                            android:layout_height="64dp"
+                                            android:src="@drawable/ic_target"
+                                            app:tint="@color/pixel_white"
+                                            android:layout_marginBottom="8dp"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="SDG 11"
+                                            android:textSize="16sp"
+                                            android:textColor="@color/pixel_white"
+                                            android:fontFamily="@font/snowbell_wp4g9"
+                                            android:textStyle="bold"
+                                            android:layout_marginBottom="4dp"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Sustainable Cities"
+                                            android:textSize="11sp"
+                                            android:textColor="@color/pixel_white"
+                                            android:fontFamily="@font/worksans_regular"
+                                            android:gravity="center"/>
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    app:cardBackgroundColor="#66BB6A"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardElevation="4dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:background="@drawable/border_black_medium">
+
+                                        <ImageView
+                                            android:layout_width="64dp"
+                                            android:layout_height="64dp"
+                                            android:src="@drawable/ic_target"
+                                            app:tint="@color/pixel_white"
+                                            android:layout_marginBottom="8dp"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="SDG 13"
+                                            android:textSize="16sp"
+                                            android:textColor="@color/pixel_white"
+                                            android:fontFamily="@font/snowbell_wp4g9"
+                                            android:textStyle="bold"
+                                            android:layout_marginBottom="4dp"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Climate Action"
+                                            android:textSize="11sp"
+                                            android:textColor="@color/pixel_white"
+                                            android:fontFamily="@font/worksans_regular"
+                                            android:gravity="center"/>
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -410,7 +506,9 @@
                     android:id="@+id/cvDailyTasks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
                     app:cardBackgroundColor="@color/pixel_white"
                     app:cardCornerRadius="0dp"
                     app:cardElevation="8dp">
@@ -418,62 +516,171 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:background="@drawable/border_black_thick">
+                        android:background="@drawable/border_black_thick"
+                        android:orientation="vertical">
 
+                        <!-- HEADER (clickable) -->
                         <LinearLayout
                             android:id="@+id/headerDailyTasks"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
                             android:background="@color/pixel_red"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="horizontal"
                             android:padding="12dp">
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:text="DAILY TASKS"
-                                android:textSize="24sp"
-                                android:textColor="@color/pixel_white"
+                                android:layout_weight="1"
                                 android:fontFamily="@font/pixelzone_0v6y4"
-                                android:textStyle="bold"/>
+                                android:text="DAILY TASKS"
+                                android:textColor="@color/pixel_white"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/tvDailyProgress"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0/10"
-                                android:textSize="12sp"
-                                android:textColor="@color/pixel_white"
                                 android:fontFamily="@font/snowbell_wp4g9"
-                                android:textStyle="bold"/>
+                                android:text="0/10"
+                                android:textColor="@color/pixel_white"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:layout_marginEnd="8dp"/>
 
                             <ImageView
                                 android:id="@+id/ivDropdownArrow"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@drawable/ic_arrow_down"
-                                android:layout_gravity="center_vertical"/>
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_arrow_down" />
                         </LinearLayout>
 
+                        <!-- DROPDOWN CONTENT -->
                         <LinearLayout
                             android:id="@+id/llDailyTasksContainer"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@color/pixel_yellow"
                             android:orientation="vertical"
                             android:padding="16dp"
-                            android:background="@color/pixel_yellow"
-                            android:visibility="gone"/>
+                            android:visibility="gone">
+
+                            <!-- Task Item 1 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="12dp">
+
+                                <CheckBox
+                                    android:id="@+id/cbDailyTask1"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="8dp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/snowbell_wp4g9"
+                                    android:text="SOMETHING TASK"
+                                    android:textColor="@color/pixel_black"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/snowbell_wp4g9"
+                                    android:text="+50 XP"
+                                    android:textColor="#00BCD4"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"/>
+                            </LinearLayout>
+
+                            <!-- Task Item 2 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="12dp">
+
+                                <CheckBox
+                                    android:id="@+id/cbDailyTask2"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="8dp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/snowbell_wp4g9"
+                                    android:text="SOMETHING TASK"
+                                    android:textColor="@color/pixel_black"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/snowbell_wp4g9"
+                                    android:text="+50 PTS"
+                                    android:textColor="#00BCD4"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"/>
+                            </LinearLayout>
+
+                            <!-- Task Item 3 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <CheckBox
+                                    android:id="@+id/cbDailyTask3"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="8dp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/snowbell_wp4g9"
+                                    android:text="SOMETHING TASK"
+                                    android:textColor="@color/pixel_black"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/snowbell_wp4g9"
+                                    android:text="+50 XP"
+                                    android:textColor="#00BCD4"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"/>
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <!-- Weekly Tasks -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/headerWeeklyTasks"
+                    android:id="@+id/cvWeeklyTasks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
                     app:cardBackgroundColor="@color/pixel_white"
                     app:cardCornerRadius="0dp"
                     app:cardElevation="8dp">
@@ -484,17 +691,21 @@
                         android:orientation="vertical"
                         android:background="@drawable/border_black_thick">
 
+                        <!-- HEADER -->
                         <LinearLayout
+                            android:id="@+id/headerWeeklyTasks"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:background="@color/pixel_green"
+                            android:clickable="true"
+                            android:focusable="true"
                             android:padding="12dp">
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="WEEKLY TASKS"
                                 android:textSize="24sp"
                                 android:textColor="@color/pixel_white"
@@ -509,7 +720,8 @@
                                 android:textSize="12sp"
                                 android:textColor="@color/pixel_white"
                                 android:fontFamily="@font/snowbell_wp4g9"
-                                android:textStyle="bold"/>
+                                android:textStyle="bold"
+                                android:layout_marginEnd="8dp"/>
 
                             <ImageView
                                 android:id="@+id/ivWeeklyDropdownArrow"
@@ -526,7 +738,75 @@
                             android:orientation="vertical"
                             android:padding="16dp"
                             android:background="@color/pixel_yellow"
-                            android:visibility="gone"/>
+                            android:visibility="gone">
+
+                            <!-- Weekly Task Item 1 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="12dp">
+
+                                <CheckBox
+                                    android:id="@+id/cbWeeklyTask1"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="8dp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/snowbell_wp4g9"
+                                    android:text="WEEKLY TASK 1"
+                                    android:textColor="@color/pixel_black"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/snowbell_wp4g9"
+                                    android:text="+100 XP"
+                                    android:textColor="#00BCD4"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"/>
+                            </LinearLayout>
+
+                            <!-- Weekly Task Item 2 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <CheckBox
+                                    android:id="@+id/cbWeeklyTask2"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="8dp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/snowbell_wp4g9"
+                                    android:text="WEEKLY TASK 2"
+                                    android:textColor="@color/pixel_black"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/snowbell_wp4g9"
+                                    android:text="+120 XP"
+                                    android:textColor="#00BCD4"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"/>
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
