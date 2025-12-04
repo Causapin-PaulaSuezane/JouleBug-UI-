@@ -2,9 +2,14 @@ package com.example.mobcom
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.example.mobcom.databinding.ActivityHomeBinding
@@ -14,12 +19,15 @@ import android.view.animation.RotateAnimation
 import android.view.animation.Transformation
 import android.view.ViewGroup.LayoutParams
 import androidx.core.view.isVisible
+import com.google.android.material.navigation.NavigationView
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityHomeBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navigationView: NavigationView
 
     private var currentUserId: String? = null
 
@@ -31,6 +39,11 @@ class HomeActivity : AppCompatActivity() {
         // Initialize Firebase
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
+
+        // Initialize Navigation Drawer
+        drawerLayout = binding.drawerLayout
+        navigationView = binding.navigationView
+        navigationView.setNavigationItemSelectedListener(this)
 
         // Get current user
         currentUserId = auth.currentUser?.uid
@@ -46,25 +59,21 @@ class HomeActivity : AppCompatActivity() {
 
         // Setup click listeners
         setupClickListeners()
-
-
     }
 
     private fun setupClickListeners() {
-        // Menu button
+        // Menu button - Open Navigation Drawer
         binding.btnMenu.setOnClickListener {
-            showMenu()
+            drawerLayout.openDrawer(GravityCompat.START)
         }
 
         // Camera Action button
         var isExpanded = false
         binding.cvCameraButton.setOnClickListener {
             if (!isExpanded) {
-                // Expand (slide up)
                 expandBottomSection()
                 isExpanded = true
             } else {
-                // Collapse (slide down)
                 collapseBottomSection()
                 isExpanded = false
             }
@@ -104,6 +113,9 @@ class HomeActivity : AppCompatActivity() {
 
                         // Update UI
                         updateUI(fullName, level, xp, streak, tasksCompleted, badgesEarned, rank)
+
+                        // Update drawer header
+                        updateDrawerHeader(fullName, level, xp)
                     } else {
                         Toast.makeText(this, "User data not found", Toast.LENGTH_SHORT).show()
                     }
@@ -144,47 +156,49 @@ class HomeActivity : AppCompatActivity() {
         binding.tvRank.text = if (rank > 0) "#$rank" else "#---"
     }
 
-    private fun showMenu() {
-        val menuItems = arrayOf(
-            "Profile",
-            "Leaderboard",
-            "Badges",
-            "Settings",
-            "About SDG",
-            "Logout"
-        )
+    private fun updateDrawerHeader(fullName: String, level: Int, xp: Int) {
+        val headerView = navigationView.getHeaderView(0)
+        val tvDrawerUserName = headerView.findViewById<TextView>(R.id.tvDrawerUserName)
+        val tvDrawerXP = headerView.findViewById<TextView>(R.id.tvDrawerXP)
 
-        AlertDialog.Builder(this)
-            .setTitle("MENU")
-            .setItems(menuItems) { dialog, which ->
-                when (which) {
-                    0 -> {
-                        // Profile
-                        Toast.makeText(this, "Profile (Coming soon!)", Toast.LENGTH_SHORT).show()
-                    }
-                    1 -> {
-                        // Leaderboard
-                        Toast.makeText(this, "Leaderboard (Coming soon!)", Toast.LENGTH_SHORT).show()
-                    }
-                    2 -> {
-                        // Badges
-                        Toast.makeText(this, "Badges (Coming soon!)", Toast.LENGTH_SHORT).show()
-                    }
-                    3 -> {
-                        // Settings
-                        Toast.makeText(this, "Settings (Coming soon!)", Toast.LENGTH_SHORT).show()
-                    }
-                    4 -> {
-                        // About SDG
-                        showSDGInfo()
-                    }
-                    5 -> {
-                        // Logout
-                        confirmLogout()
-                    }
-                }
+        tvDrawerUserName.text = fullName
+        tvDrawerXP.text = "$xp/1000 XP"
+
+        // TODO: Load user avatar
+        // val ivDrawerAvatar = headerView.findViewById<ImageView>(R.id.ivDrawerAvatar)
+        // Glide.with(this).load(avatarUrl).into(ivDrawerAvatar)
+    }
+
+    // Navigation Drawer Item Selection
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_profile -> {
+                Toast.makeText(this, "Profile (Coming soon!)", Toast.LENGTH_SHORT).show()
+                // TODO: startActivity(Intent(this, ProfileActivity::class.java))
             }
-            .show()
+            R.id.nav_leaderboard -> {
+                Toast.makeText(this, "Leaderboard (Coming soon!)", Toast.LENGTH_SHORT).show()
+                // TODO: startActivity(Intent(this, LeaderboardActivity::class.java))
+            }
+            R.id.nav_badges -> {
+                Toast.makeText(this, "Badges (Coming soon!)", Toast.LENGTH_SHORT).show()
+                // TODO: startActivity(Intent(this, BadgesActivity::class.java))
+            }
+            R.id.nav_settings -> {
+                Toast.makeText(this, "Settings (Coming soon!)", Toast.LENGTH_SHORT).show()
+                // TODO: startActivity(Intent(this, SettingsActivity::class.java))
+            }
+            R.id.nav_about_sdg -> {
+                showSDGInfo()
+            }
+            R.id.nav_logout -> {
+                confirmLogout()
+            }
+        }
+
+        // Close drawer after item selection
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
     }
 
     private fun toggleDropdown(container: View, arrow: View) {
@@ -273,7 +287,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun openCamera() {
         Toast.makeText(this, "📸 Opening camera to capture eco-actions! (Coming Soon)", Toast.LENGTH_SHORT).show()
-
     }
 
     private fun expandBottomSection() {
@@ -324,5 +337,13 @@ class HomeActivity : AppCompatActivity() {
     private fun navigateToLogin() {
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
+    }
+
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 }
