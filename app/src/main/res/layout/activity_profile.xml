@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_cream">
+
+    <!-- Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_background_red"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="@drawable/button_red_pixel"
+            android:contentDescription="Back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PROFILE"
+            android:textSize="32sp"
+            android:textColor="@color/pixel_white"
+            android:fontFamily="@font/pixelzone_0v6y4"
+            android:textStyle="bold"
+            android:shadowColor="@color/pixel_black"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnShareProfile"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_share"
+            android:background="@drawable/button_red_pixel"
+            android:contentDescription="Share"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Profile Avatar -->
+            <ImageView
+                android:id="@+id/ivProfileAvatar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/avatar_placeholder"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Name -->
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player Name"
+                android:textSize="24sp"
+                android:textColor="@color/pixel_black"
+                android:fontFamily="@font/snowbell_wp4g9"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Email -->
+            <TextView
+                android:id="@+id/tvProfileEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email@example.com"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/worksans_regular"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Level & XP -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/tvLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Level 8"
+                    android:textSize="14sp"
+                    android:textColor="@color/pixel_black"
+                    android:fontFamily="@font/snowbell_wp4g9"
+                    android:textStyle="bold"
+                    android:background="@color/pixel_yellow"
+                    android:padding="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/tvXP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="810 XP"
+                    android:textSize="14sp"
+                    android:textColor="@color/pixel_black"
+                    android:fontFamily="@font/snowbell_wp4g9"
+                    android:textStyle="bold"
+                    android:background="@color/pixel_green"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <!-- Streak -->
+            <TextView
+                android:id="@+id/tvStreak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 day streak 🔥"
+                android:textSize="16sp"
+                android:textColor="@color/pixel_black"
+                android:fontFamily="@font/snowbell_wp4g9"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Stats Grid -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/pixel_yellow"
+                    android:padding="16dp"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/tvTasksCompleted"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="153"
+                        android:textSize="24sp"
+                        android:textColor="@color/pixel_black"
+                        android:fontFamily="@font/snowbell_wp4g9"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TASKS"
+                        android:textSize="10sp"
+                        android:textColor="@color/pixel_black"
+                        android:fontFamily="@font/snowbell_wp4g9" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="#64B5F6"
+                    android:padding="16dp"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/tvBadgesEarned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21"
+                        android:textSize="24sp"
+                        android:textColor="@color/pixel_black"
+                        android:fontFamily="@font/snowbell_wp4g9"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BADGES"
+                        android:textSize="10sp"
+                        android:textColor="@color/pixel_black"
+                        android:fontFamily="@font/snowbell_wp4g9" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="#AED581"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvRank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#118"
+                        android:textSize="24sp"
+                        android:textColor="@color/pixel_black"
+                        android:fontFamily="@font/snowbell_wp4g9"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RANK"
+                        android:textSize="10sp"
+                        android:textColor="@color/pixel_black"
+                        android:fontFamily="@font/snowbell_wp4g9" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Join Date -->
+            <TextView
+                android:id="@+id/tvJoinDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Member since January 2024"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/worksans_regular"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Edit Profile Button -->
+            <Button
+                android:id="@+id/btnEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EDIT PROFILE"
+                android:textSize="14sp"
+                android:textColor="@color/pixel_white"
+                android:fontFamily="@font/snowbell_wp4g9"
+                android:textStyle="bold"
+                android:background="@drawable/button_green_pixel"
+                android:padding="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

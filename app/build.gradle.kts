@@ -28,6 +28,7 @@ android {
         }
     }
 
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -47,10 +48,10 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
 
     // Firebase Authentication
-    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-auth")
 
     // Firebase Firestore
-    implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation("com.google.firebase:firebase-firestore")
 
     // AndroidX Core
     implementation("androidx.core:core-ktx:1.12.0")
@@ -58,6 +59,10 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.cardview:cardview:1.0.0")
+
+    // DrawerLayout
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.drawerlayout:drawerlayout:1.1.1")
 
     // Testing
     testImplementation("junit:junit:4.13.2")

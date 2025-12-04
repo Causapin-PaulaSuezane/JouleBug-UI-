@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/pixel_white"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="@drawable/border_black_medium"
+        android:gravity="center_vertical">
+
+        <!-- Friend Avatar -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/ivFriendAvatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/avatar_placeholder"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Friend Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvFriendName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friend Name"
+                android:textSize="14sp"
+                android:textColor="@color/pixel_black"
+                android:fontFamily="@font/snowbell_wp4g9"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LV"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_secondary"
+                    android:fontFamily="@font/snowbell_wp4g9" />
+
+                <TextView
+                    android:id="@+id/tvFriendLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8"
+                    android:textSize="10sp"
+                    android:textColor="@color/pixel_black"
+                    android:fontFamily="@font/snowbell_wp4g9"
+                    android:textStyle="bold"
+                    android:layout_marginStart="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="•"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/ic_fire"
+                    android:layout_gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/tvFriendStreak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textSize="10sp"
+                    android:textColor="@color/pixel_black"
+                    android:fontFamily="@font/snowbell_wp4g9"
+                    android:textStyle="bold"
+                    android:layout_marginStart="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="day streak"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_secondary"
+                    android:fontFamily="@font/snowbell_wp4g9"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+
+            <!-- Online Status -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <View
+                    android:id="@+id/vOnlineIndicator"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/circle_green"
+                    android:layout_gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/tvOnlineStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Online"
+                    android:textSize="9sp"
+                    android:textColor="@color/pixel_green"
+                    android:fontFamily="@font/snowbell_wp4g9"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Action Button -->
+        <ImageButton
+            android:id="@+id/btnFriendAction"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_chat"
+            android:background="@drawable/button_green_pixel"
+            android:contentDescription="Message Friend"
+            android:padding="8dp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
